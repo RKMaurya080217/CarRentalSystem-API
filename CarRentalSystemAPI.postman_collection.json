@@ -4,7 +4,7 @@
 		"name": "CarRentalSystemAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12097893",
-		"_collection_link": "https://www.postman.com/bold-resonance-764395/workspace/product/collection/12097893-a5ee64ab-0f48-4ad6-9415-dbcad8794980?action=share&source=collection_link&creator=12097893"
+		"_collection_link": "https://www.postman.com/bold-resonance-764395/workspace/rkmaurya/collection/12097893-a5ee64ab-0f48-4ad6-9415-dbcad8794980?action=share&source=collection_link&creator=12097893"
 	},
 	"item": [
 		{
@@ -118,7 +118,22 @@
 							"name": "get_all_car",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://localhost:8080/car/get_all_car",
 									"protocol": "http",
@@ -353,7 +368,7 @@
 					"response": []
 				},
 				{
-					"name": "brand/Mustang",
+					"name": "brand/brand_name",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -368,6 +383,86 @@
 								"car",
 								"brand",
 								"Toyota"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "brand/Mustang",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/car/brand/Toyota",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"car",
+										"brand",
+										"Toyota"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Jun 2024 17:03:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"plateNumber\": \"JKL012\",\n        \"name\": \"Corolla\",\n        \"brand\": \"Toyota\",\n        \"pricePerDay\": 90,\n        \"costPrice\": 18000,\n        \"color\": \"Black\"\n    },\n    {\n        \"plateNumber\": \"STU901\",\n        \"name\": \"Camry\",\n        \"brand\": \"Toyota\",\n        \"pricePerDay\": 100,\n        \"costPrice\": 24000,\n        \"color\": \"Blue\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"brands"
 							]
 						}
 					},
@@ -462,6 +557,26 @@
 							"body": "{\n    \"licenseNumber\": \"DL123456\",\n    \"customerName\": \"Saurabh\",\n    \"customerAge\": 18,\n    \"nationalIDNumber\": \"NID789012\"\n}"
 						}
 					]
+				},
+				{
+					"name": "get_all_customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/get_all_customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"get_all_customer"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -552,6 +667,26 @@
 							"body": "Car rented successfully to Manish"
 						}
 					]
+				},
+				{
+					"name": "customer_rent_details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rent/DL456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rent",
+								"DL456789"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
