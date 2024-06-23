@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "a5ee64ab-0f48-4ad6-9415-dbcad8794980",
+		"name": "CarRentalSystemAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12097893",
+		"_collection_link": "https://www.postman.com/bold-resonance-764395/workspace/product/collection/12097893-a5ee64ab-0f48-4ad6-9415-dbcad8794980?action=share&source=collection_link&creator=12097893"
+	},
+	"item": [
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "add_car",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Model S\",\r\n  \"brand\": \"Tesla\",\r\n  \"pricePerDay\": 200,\r\n  \"plateNumber\": \"ABC123.0\",\r\n  \"costPrice\": 80000,\r\n  \"color\": \"Red\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/add_car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"add_car"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add_car",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mustang\",\r\n    \"brand\": \"Ford\",\r\n    \"pricePerDay\": 150,\r\n    \"plateNumber\": \"DEF456\",\r\n    \"costPrice\": 50000,\r\n    \"color\": \"Blue\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/car/add_car",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"car",
+										"add_car"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Jun 2024 12:48:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"plateNumber\": \"DEF456\",\n    \"name\": \"Mustang\",\n    \"brand\": \"Ford\",\n    \"pricePerDay\": 150,\n    \"costPrice\": 50000,\n    \"color\": \"Blue\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get_all_car",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/get_all_car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"get_all_car"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_all_car",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/car/get_all_car",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"car",
+										"get_all_car"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Jun 2024 04:28:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"plateNumber\": \"ABC123\",\n        \"name\": \"Model S\",\n        \"brand\": \"Tesla\",\n        \"pricePerDay\": 200,\n        \"costPrice\": 80000,\n        \"color\": \"Red\"\n    },\n    {\n        \"plateNumber\": \"BCD890\",\n        \"name\": \"Charger\",\n        \"brand\": \"Dodge\",\n        \"pricePerDay\": 140,\n        \"costPrice\": 35000,\n        \"color\": \"Red\"\n    },\n    {\n        \"plateNumber\": \"DEF456\",\n        \"name\": \"Mustang\",\n        \"brand\": \"Ford\",\n        \"pricePerDay\": 150,\n        \"costPrice\": 50000,\n        \"color\": \"Blue\"\n    },\n    {\n        \"plateNumber\": \"GHI789\",\n        \"name\": \"Civic\",\n        \"brand\": \"Honda\",\n        \"pricePerDay\": 100,\n        \"costPrice\": 20000,\n        \"color\": \"White\"\n    },\n    {\n        \"plateNumber\": \"JKL012\",\n        \"name\": \"Corolla\",\n        \"brand\": \"Toyota\",\n        \"pricePerDay\": 90,\n        \"costPrice\": 18000,\n        \"color\": \"Black\"\n    },\n    {\n        \"plateNumber\": \"MNO345\",\n        \"name\": \"3 Series\",\n        \"brand\": \"BMW\",\n        \"pricePerDay\": 220,\n        \"costPrice\": 60000,\n        \"color\": \"Grey\"\n    },\n    {\n        \"plateNumber\": \"PQR678\",\n        \"name\": \"A4\",\n        \"brand\": \"Audi\",\n        \"pricePerDay\": 210,\n        \"costPrice\": 55000,\n        \"color\": \"Silver\"\n    },\n    {\n        \"plateNumber\": \"STU901\",\n        \"name\": \"Camry\",\n        \"brand\": \"Toyota\",\n        \"pricePerDay\": 100,\n        \"costPrice\": 24000,\n        \"color\": \"Blue\"\n    },\n    {\n        \"plateNumber\": \"VWX234\",\n        \"name\": \"Accord\",\n        \"brand\": \"Honda\",\n        \"pricePerDay\": 110,\n        \"costPrice\": 26000,\n        \"color\": \"White\"\n    },\n    {\n        \"plateNumber\": \"YZA567\",\n        \"name\": \"Model 3\",\n        \"brand\": \"Tesla\",\n        \"pricePerDay\": 180,\n        \"costPrice\": 45000,\n        \"color\": \"Black\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "available_cars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/available_cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"available_cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/car/available_cars",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/car/available_cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"car",
+										"available_cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Jun 2024 04:35:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"plateNumber\": \"ABC123\",\n        \"name\": \"Model S\",\n        \"brand\": \"Tesla\",\n        \"pricePerDay\": 200,\n        \"costPrice\": 80000,\n        \"color\": \"Red\"\n    },\n    {\n        \"plateNumber\": \"BCD890\",\n        \"name\": \"Charger\",\n        \"brand\": \"Dodge\",\n        \"pricePerDay\": 140,\n        \"costPrice\": 35000,\n        \"color\": \"Red\"\n    },\n    {\n        \"plateNumber\": \"DEF456\",\n        \"name\": \"Mustang\",\n        \"brand\": \"Ford\",\n        \"pricePerDay\": 150,\n        \"costPrice\": 50000,\n        \"color\": \"Blue\"\n    },\n    {\n        \"plateNumber\": \"GHI789\",\n        \"name\": \"Civic\",\n        \"brand\": \"Honda\",\n        \"pricePerDay\": 100,\n        \"costPrice\": 20000,\n        \"color\": \"White\"\n    },\n    {\n        \"plateNumber\": \"JKL012\",\n        \"name\": \"Corolla\",\n        \"brand\": \"Toyota\",\n        \"pricePerDay\": 90,\n        \"costPrice\": 18000,\n        \"color\": \"Black\"\n    },\n    {\n        \"plateNumber\": \"MNO345\",\n        \"name\": \"3 Series\",\n        \"brand\": \"BMW\",\n        \"pricePerDay\": 220,\n        \"costPrice\": 60000,\n        \"color\": \"Grey\"\n    },\n    {\n        \"plateNumber\": \"STU901\",\n        \"name\": \"Camry\",\n        \"brand\": \"Toyota\",\n        \"pricePerDay\": 100,\n        \"costPrice\": 24000,\n        \"color\": \"Blue\"\n    },\n    {\n        \"plateNumber\": \"VWX234\",\n        \"name\": \"Accord\",\n        \"brand\": \"Honda\",\n        \"pricePerDay\": 110,\n        \"costPrice\": 26000,\n        \"color\": \"White\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete_car",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/delete_car?plateNumber=DEF456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"delete_car"
+							],
+							"query": [
+								{
+									"key": "plateNumber",
+									"value": "DEF456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_car",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plateNumber\": \"GHI789\",\r\n    \"name\": \"Civics\",\r\n    \"brand\": \"Hondaa\",\r\n    \"pricePerDay\": 1001,\r\n    \"costPrice\": 200001,\r\n    \"color\": \"black\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/update_car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"update_car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_a_car_details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/get_a_car_details?plateNumber=GHI789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"get_a_car_details"
+							],
+							"query": [
+								{
+									"key": "plateNumber",
+									"value": "GHI789"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brand/Mustang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/brand/Toyota",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"brand",
+								"Toyota"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "add_customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"licenseNumber\": \"DL123456\",\r\n\t\"customerName\": \"Saurabh\",\r\n\t\"customerAge\": 18,\r\n\t\"nationalIDNumber\": \"NID789012\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer/add_customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"add_customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add_customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"licenseNumber\": \"DL123456\",\r\n\t\"customerName\": \"Saurabh\",\r\n\t\"customerAge\": 18,\r\n\t\"nationalIDNumber\": \"NID789012\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/customer/add_customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customer",
+										"add_customer"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jun 2024 01:30:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"licenseNumber\": \"DL123456\",\n    \"customerName\": \"Saurabh\",\n    \"customerAge\": 18,\n    \"nationalIDNumber\": \"NID789012\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Rent",
+			"item": [
+				{
+					"name": "rent_car",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerLicenseNumber\": \"DL567890\",\r\n    \"carPlateNumber\": \"ABC123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rent/rent_car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rent",
+								"rent_car"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rent_car",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerLicenseNumber\": \"DL567890\",\r\n    \"carPlateNumber\": \"ABC123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/rent/rent_car",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"rent",
+										"rent_car"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Jun 2024 04:47:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Car rented successfully to Manish"
+						}
+					]
+				}
+			]
+		}
+	]
+}
